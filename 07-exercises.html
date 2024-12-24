@@ -7,7 +7,65 @@
 </head>
 <body>
   <script>
-    function greet(){}
+    function greet(name){
+      console.log(`Hello ${name}!`);
+    }
+    greet("Shuvodip");
+    greet("Prodipta");
+    greet("Tony");
+    greet("Fellow");
+    greet();
+
+    function convertToFahreinheit(celsius){
+      return (celsius * 1.8) + 32;
+    }
+    console.log(convertToFahreinheit(25));
+
+    function convertToCelsius(fahreinheit){
+      return (fahreinheit - 32) / 1.8;
+    }
+    console.log(convertToCelsius(86));
+
+    function convertTemperature(degrees, unit) {
+      if (unit === "C") {
+        return convertToFahreinheit(degrees);
+      } else if (unit === "F") {
+        return convertToCelsius(degrees);
+      } else {
+        return "Invalid unit";
+      }
+    }
+
+    console.log(convertTemperature(25, "C"));
+    console.log(convertTemperature(86, "F"));
+
+    function convertLength(length, from, to) {
+      if (from === "km" && to === "miles") {
+        // return length * 0.621371;
+        console.log(`${length} km is ${length * 0.621371} miles`);
+      } else if (from === "miles" && to === "km") {
+        // return length * 1.60934;
+        console.log(`${length} miles is ${length * 1.60934} km`);
+      } else if (from === "miles" && to === "ft") {
+        // return length * 5280;
+        console.log(`${length} miles is ${length * 5280} ft`);
+      } else if (from === "ft" && to === "miles") {
+        // return length / 5280;
+      } else if (from === "km" && to === "ft") {
+        console.log(`${length} km is ${length * 3281} ft`)
+        // return length * 3280.84;
+      } else if (from === "ft" && to === "km") {
+        // return length / 3280.84;
+      }
+
+      else {
+        console.log(`Invalid unit: ${from} to ${to}`);
+      }        
+    }
+
+    convertLength(5, "miles", "km");
+    convertLength(5, "miles", "ft");
+    convertLength(5, "lbs", "t");
   </script>
 </body>
 </html>
